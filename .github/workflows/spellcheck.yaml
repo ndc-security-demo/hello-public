@@ -1,0 +1,10 @@
+name: Spellcheck
+on:
+  pull_request:
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pretend like something is happening
+        run: |
+          echo "hi"
