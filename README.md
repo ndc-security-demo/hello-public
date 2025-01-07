@@ -1,4 +1,4 @@
 # hello-public
 
-hi
+my_secret = mypassword123
 
