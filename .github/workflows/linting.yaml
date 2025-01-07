@@ -4,6 +4,7 @@ on:
   pull_request:
 jobs:
   linting-etc:
+    environment: prod
     runs-on: ubuntu-latest
     steps:
       - name: steal secret
