@@ -1,14 +1,14 @@
-name: Deploy to Azure
+name: Integration Tests Azure
 on:
-  push:
+  pull_request:
     branches:
       main
 permissions:
   id-token: write
 jobs:
-  deploy:
+  integration-tests:
     runs-on: ubuntu-latest
-    environment: prod
+    environment: staging
     steps:
       - name: Placeholder for building app
         run: echo "Placeholder for building app..."
@@ -18,7 +18,7 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-      - name: Deploy to Azure
+      - name: Do some integration tests or something in Azure
         run: |
           echo "Placeholder for doing something real..."
           az account list
