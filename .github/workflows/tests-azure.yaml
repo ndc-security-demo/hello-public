@@ -1,8 +1,6 @@
 name: Integration Tests Azure
 on:
   pull_request:
-    branches:
-      main
 permissions:
   id-token: write
 jobs:
@@ -19,7 +17,7 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       - name: Do some integration tests or something in Azure
         run: |
-          echo "Placeholder for doing something real..."
-          az account list
+          echo "Placeholder for doing something malicious..."
+          az security setting list
 
 
