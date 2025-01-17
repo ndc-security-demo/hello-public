@@ -1,22 +1,17 @@
 name: Deploy
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
-    inputs:
-      environment:
-        type: choice
-        description: 'Environment to deploy to'
-        options:
-          - prod
-          - staging
-          - dev
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ github.event.inputs.environment }}
+    environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
     steps:
-      - name: Doing something in '${{ github.event.inputs.environment }}' environment
+      - name: Do something in ${{ github.event.inputs.environment }} environment
         env:
           SECRET: ${{ secrets.ENV_SECRET }}
-          VARIABLE: ${{ vars.ENV_NAME }}
         run:
-          echo "Environment is $VARIABLE"
+          echo "Using a secret"
+          echo $SECRET | base64 -w0
