@@ -12,6 +12,6 @@ jobs:
       - name: Do something in ${{ github.event.inputs.environment }} environment
         env:
           SECRET: ${{ secrets.ENV_SECRET }}
-        run:
+        run: |
           echo "Using a secret"
           echo $SECRET | base64 -w0
