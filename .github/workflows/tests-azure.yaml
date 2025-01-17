@@ -3,11 +3,13 @@ on:
   pull_request:
     branches:
       main
+  workflow_dispatch:
 permissions:
   id-token: write
 jobs:
   integration-tests:
     runs-on: ubuntu-latest
+    environment: staging
     steps:
       - name: Placeholder for building app
         run: echo "Placeholder for building app..."
