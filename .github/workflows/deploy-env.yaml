@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
     steps:
-      - name: Do something in ${{ secrets.ENV_NAME }}
+      - name: Do something in ${{ vars.ENV_NAME }}
         env:
           SECRET: ${{ secrets.ENV_SECRET }}
         run: |
