@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
     steps:
-      - name: Do something in ${{ github.event.inputs.environment }} environment
+      - name: Do something
         env:
           SECRET: ${{ secrets.ENV_SECRET }}
         run: |
-          echo "Using a secret"
-          echo $SECRET | base64 -w0
+          echo "Place holder for doing a deploy or something with the secret"
