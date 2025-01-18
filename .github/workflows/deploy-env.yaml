@@ -13,4 +13,4 @@ jobs:
         env:
           SECRET: ${{ secrets.ENV_SECRET }}
         run: |
-          echo "Place holder for doing a deploy or something with the secret"
+          echo "Placeholder for doing a deploy or something with the secret"
