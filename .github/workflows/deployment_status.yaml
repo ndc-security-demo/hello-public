@@ -1,0 +1,10 @@
+
+name: Deployment_status trigger
+on:
+  deployment_status
+jobs:
+  normal:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "${{ toJson(github) }}"

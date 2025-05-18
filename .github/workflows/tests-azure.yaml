@@ -1,6 +1,9 @@
 name: Integration Tests Azure
 on:
-  pull_request:
+  #pull_request:
+  #  branches:
+  #    main
+  deployment_status
 permissions:
   id-token: write
 jobs:
