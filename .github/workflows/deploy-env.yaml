@@ -1,0 +1,16 @@
+name: Deploy to appropriate environment
+on:
+  #push:
+  #  branches:
+  #    - main
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
+    steps:
+      - name: Do something in ${{ vars.ENV_NAME }}
+        env:
+          SECRET: ${{ secrets.ENV_SECRET }}
+        run: |
+          echo "Placeholder for doing a deploy or something with the secret"
